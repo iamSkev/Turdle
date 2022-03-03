@@ -9,10 +9,15 @@ class Utilities(commands.Cog):
     
     @commands.command()
     @commands.has_any_role(ALLOWED_ROLES)
-    async def say(self, ctx, channel: disnake.TextChannel = None,* , phrase):
-        channel = channel or ctx.channel
+    async def say(self, ctx, channel: disnake.TextChannel,* , phrase):
         await channel.send(phrase)
     
+    @say.error
+    async def say_error(self, ctx, error):
+        if isinstance(error, commands.MissingRequireArgument("phrase")):          
+            await ctx.send("Hey! i actually need something to send.")
+        if isinstance(error, commands.MissingRequiredArgument("channel")):
+            await ctx.send("Sorry bub no can do. I need a channel to send stuff to.")    
 
 def setup(bot):
     bot.add_cog(Utilities(bot))
