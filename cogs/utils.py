@@ -19,6 +19,7 @@ class Utilities(commands.Cog):
             if param == "channel: disnake.TextChannel":
                 await ctx.send("Sorry bub no can do. I need a channel to send stuff to.")
             else:
+                await ctx.send(param)
                 await ctx.send("Hey! i actually need something to send.") 
 
 def setup(bot):
