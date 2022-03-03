@@ -14,10 +14,11 @@ class Utilities(commands.Cog):
     
     @say.error
     async def say_error(self, ctx, error):
-        if isinstance(error, commands.MissingRequiredArgument("phrase")):          
-            await ctx.send("Hey! i actually need something to send.")
-        if isinstance(error, commands.MissingRequiredArgument("channel")):
-            await ctx.send("Sorry bub no can do. I need a channel to send stuff to.")    
+        if isinstance(error, commands.MissingRequiredArgument):
+            param = error.param
+            await ctx.send(param)         
+            #await ctx.send("Hey! i actually need something to send.")
+            #await ctx.send("Sorry bub no can do. I need a channel to send stuff to.")    
 
 def setup(bot):
     bot.add_cog(Utilities(bot))
