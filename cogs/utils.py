@@ -7,7 +7,7 @@ class Utilities(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    @commands.command
+    @commands.command()
     @commands.has_any_role(ALLOWED_ROLES)
     async def say(self, ctx, channe=None,* , phrase):
         channel = channel or ctx.channel
