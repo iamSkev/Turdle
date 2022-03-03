@@ -18,6 +18,8 @@ class Utilities(commands.Cog):
     async def say_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
             await ctx.send("Sorry bub no can do. I actually need something to send.") 
+        elif isinstance(error, coammands.MissingAnyRole):
+            await ctx.send("Sorry bub you don't have the required roles.")
 
 def setup(bot):
     bot.add_cog(Utilities(bot))
