@@ -9,7 +9,7 @@ class Utilities(commands.Cog):
     
     @commands.command()
     @commands.has_any_role(ALLOWED_ROLES)
-    async def say(self, ctx, channe=None,* , phrase):
+    async def say(self, ctx, channel=None,* , phrase):
         channel = channel or ctx.channel
         await channel.send(phrase)
     
