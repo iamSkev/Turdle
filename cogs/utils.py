@@ -16,11 +16,11 @@ class Utilities(commands.Cog):
     async def say_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
             param = error.param
-            if param == "channel: disnake.TextChannel":
+            if param == "channel: disnake.channel.TextChannel":
                 await ctx.send("Sorry bub no can do. I need a channel to send stuff to.")
             else:
                 await ctx.send(param)
-                await ctx.send("Hey! i actually need something to send.") 
+                await ctx.send("Hey! I actually need something to send.") 
 
 def setup(bot):
     bot.add_cog(Utilities(bot))
