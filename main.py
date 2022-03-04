@@ -11,19 +11,19 @@ token = os.getenv("BOT_TOKEN")
 
 @bot.command()
 @commands.is_owner()
-async def load(ctx, extension):
+async def load(ctx, extension) -> None:
   bot.load_extension(f'cogs.{extension}')
   await ctx.send("Succesfully did it poggers")
 
 @bot.command()
 @commands.is_owner()
-async def unload(ctx, extension):
+async def unload(ctx, extension) -> None:
   bot.unload_extension(f'cogs.{extension}')
   await ctx.send("Succesfully did it poggers")
 
 @bot.command()
 @commands.is_owner()
-async def reload(ctx, extension):
+async def reload(ctx, extension) -> None:
   bot.unload_extension(f'cogs.{extension}')
   bot.load_extension(f'cogs.{extension}')
   await ctx.send("Did it")
