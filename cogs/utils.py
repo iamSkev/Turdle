@@ -15,7 +15,7 @@ class Utilities(commands.Cog):
         return True
     
     @commands.command()
-    @commands.has_any_role(*ALLOWED_ROLES)
+    @commands.has_any_role(884136022592610334, 94909702748308688)
     async def say(self, ctx, channel: Optional[disnake.TextChannel], *, phrase) -> None:
         channel = channel or ctx.channel
         await channel.send(phrase)
