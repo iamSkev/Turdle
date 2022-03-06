@@ -27,8 +27,8 @@ class Utilities(commands.Cog):
             await ctx.send("Could not get info about that userid. Perhaps its wrong or it does not exist")
             return
         date_format = "%a, %d %b %Y %I:%M %p"
-        embed = disnake.Embed(color=0xdfa3ff, description=user)
-        embed.set_author(name=str(user), icon_url=user.display_avatar)
+        embed = disnake.Embed(color=0xdfa3ff, description=user.mention)
+        embed.set_author(name=user.display_name, icon_url=user.display_avatar)
         embed.set_thumbnail(url=user.display_avatar)
         embed.add_field(name="Registered", value=user.created_at.strftime(date_format))
         embed.set_footer(text='ID: ' + str(user.id))
