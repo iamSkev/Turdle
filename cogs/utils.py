@@ -9,7 +9,7 @@ class Utilities(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    async def bot_check_once(self, ctx)s:
+    async def bot_check_once(self, ctx):
         if ctx.author.id == BANNED_USER:
             return False
         return True
