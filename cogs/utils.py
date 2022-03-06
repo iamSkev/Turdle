@@ -22,12 +22,12 @@ class Utilities(commands.Cog):
     
     @commands.command()
     async def userinfo(self, ctx, id: int) -> None:
-        user = self.bot.fetch_user(id)
+        user = await self.bot.fetch_user(id)
         if user is None:
             await ctx.send("Could not get info about that userid. Perhaps its wrong or it does not exist")
             return
         date_format = "%a, %d %b %Y %I:%M %p"
-        embed = disnake.Embed(color=0xdfa3ff, description=user.mention)
+        embed = disnake.Embed(color=0xdfa3ff, description=user)
         embed.set_author(name=str(user), icon_url=user.display_avatar)
         embed.set_thumbnail(url=user.display_avatar)
         embed.add_field(name="Registered", value=user.created_at.strftime(date_format))
