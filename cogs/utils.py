@@ -2,7 +2,7 @@ import disnake
 from typing import Optional
 from disnake.ext import commands
 
-ALLOWED_ROLES = [884136022592610334, 94909702748308688]
+ALLOWED_ROLES = [884136022592610334, 949097027483086888]
 BANNED_USER = 619672500019789844
 
 class Utilities(commands.Cog):
@@ -15,7 +15,7 @@ class Utilities(commands.Cog):
         return True
     
     @commands.command()
-    @commands.has_any_role(884136022592610334, 94909702748308688)
+    @commands.has_any_role(*ALLOWED_ROLES)
     async def say(self, ctx, channel: Optional[disnake.TextChannel], *, phrase) -> None:
         channel = channel or ctx.channel
         await channel.send(phrase)
