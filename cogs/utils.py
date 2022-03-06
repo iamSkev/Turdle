@@ -21,7 +21,7 @@ class Utilities(commands.Cog):
         await channel.send(phrase)
     
     @commands.command()
-    async def userinfo(self, ctx, id: int = None) -> None:
+    async def userinfo(self, ctx, id: int) -> None:
         user = self.bot.get_user(id)
         if user is None:
             await ctx.send("Could not get info about that userid. Perhaps its wrong or it does not exist")
