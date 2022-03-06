@@ -2,7 +2,7 @@ import disnake
 from typing import Optional
 from disnake.ext import commands
 
-ALLOWED_ROLES = [884136022592610334, 949097027483086888]
+ALLOWED_ROLES = 884136022592610334, 94909702748308688
 BANNED_USER = 619672500019789844
 
 class Utilities(commands.Cog):
