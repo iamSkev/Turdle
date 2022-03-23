@@ -2,17 +2,11 @@ import disnake
 from typing import Optional
 from disnake.ext import commands
 
-ALLOWED_ROLES = [884136022592610334, 949097027483086888]
-BANNED_USER = 619672500019789844
+ALLOWED_ROLES = [884136022592610334, 949097027483086888, 956021556033761311]
 
 class Utilities(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-    
-    async def bot_check_once(self, ctx):
-        if ctx.author.id == BANNED_USER:
-            return False
-        return True
     
     @commands.command()
     @commands.has_any_role(*ALLOWED_ROLES)
