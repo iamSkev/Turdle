@@ -1,5 +1,7 @@
 import disnake
 from typing import Optional
+import datetime
+from datetime import datetime
 from disnake.ext import commands
 
 ALLOWED_ROLES = [884136022592610334, 949097027483086888, 956021556033761311]
@@ -27,6 +29,14 @@ class Utilities(commands.Cog):
         embed.add_field(name="Registered", value=user.created_at.strftime(date_format))
         embed.set_footer(text='ID: ' + str(user.id))
         await ctx.send(embed=embed)
+    
+    @commands.command()
+    async def test(self, ctx):
+        embed = disnake.Embed(title="Welcome to Pomelo SMP!", description="You should go and check out #rules & the #server-map!", colour=0xFFE684, timestamp=datetime.utcnow())
+        embed.set_thumbnail(url="https://media.discordapp.net/attachments/956026532105707560/956033570558861342/axolotl-minecraft.gif")
+        embed.set_image(url="https://media.discordapp.net/attachments/956026532105707560/956034300518752276/minecraft-axolotl.gif")
+        await ctx.send(embed=embed)
+
 
     @say.error
     async def say_error(self, ctx, error) -> None:
