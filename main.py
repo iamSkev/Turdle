@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 from disnake.ext import commands
 
-bot = commands.Bot(command_prefix="t!")
+bot = commands.Bot(command_prefix="t!", intents=disnake.Intents.all())
 
 load_dotenv()
 token = os.getenv("BOT_TOKEN")
