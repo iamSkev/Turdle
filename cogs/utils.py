@@ -30,6 +30,15 @@ class Utilities(commands.Cog):
         embed.set_footer(text='ID: ' + str(user.id))
         await ctx.send(embed=embed)
     
+    @commands.Cog.listener()
+    async def on_message(member):
+        if member.guild.id == 955305846898851920:
+            channel = self.bot.get_channel(956359584233181295)
+            embed = disnake.Embed(title="Welcome to Pomelo SMP!", description="You should go and check out <#955306783130386442> & the <#955306855305990174>!", colour=0xFFE684, timestamp=datetime.utcnow())
+            embed.set_thumbnail(url="https://media.discordapp.net/attachments/956026532105707560/956033570558861342/axolotl-minecraft.gif")
+            embed.set_image(url="https://media.discordapp.net/attachments/956026532105707560/956034300518752276/minecraft-axolotl.gif")
+            await channel.send(f"{member.mention} has just arrived! Say hi and slap them on the ass!")
+
     @commands.command()
     async def test(self, ctx):
         embed = disnake.Embed(title="Welcome to Pomelo SMP!", description="You should go and check out <#955306783130386442> & the <#955306855305990174>!", colour=0xFFE684, timestamp=datetime.utcnow())
