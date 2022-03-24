@@ -32,12 +32,12 @@ class Utilities(commands.Cog):
     
     @commands.Cog.listener("on_member_join")
     async def on_member_join(self, member):
-        print(member)
-        channel = self.bot.get_channel(956359584233181295)
-        embed = disnake.Embed(title="Welcome to Pomelo SMP!", description="You should go and check out <#955306783130386442> & the <#955306855305990174>!", colour=0xFFE684, timestamp=datetime.utcnow())
-        embed.set_thumbnail(url="https://media.discordapp.net/attachments/956026532105707560/956033570558861342/axolotl-minecraft.gif")
-        embed.set_image(url="https://media.discordapp.net/attachments/956026532105707560/956034300518752276/minecraft-axolotl.gif")
-        await channel.send(f"{member.mention} has just arrived! Say hi and slap them on the ass!", embed=embed)
+        if member.guild.id == 955305846898851920:
+            channel = self.bot.get_channel(956359584233181295)
+            embed = disnake.Embed(title="Welcome to Pomelo SMP!", description="You should go and check out <#955306783130386442> & the <#955306855305990174>!", colour=0xFFE684, timestamp=datetime.utcnow())
+            embed.set_thumbnail(url="https://media.discordapp.net/attachments/956026532105707560/956033570558861342/axolotl-minecraft.gif")
+            embed.set_image(url="https://media.discordapp.net/attachments/956026532105707560/956034300518752276/minecraft-axolotl.gif")
+            await channel.send(f"{member.mention} has just arrived! Say hi and slap them on the ass!", embed=embed)
 
     @commands.command()
     async def test(self, ctx):
