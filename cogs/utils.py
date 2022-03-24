@@ -31,7 +31,7 @@ class Utilities(commands.Cog):
         await ctx.send(embed=embed)
     
     @commands.Cog.listener()
-    async def on_message(self, member):
+    async def on_member_join(self, member):
         if member.guild.id == 955305846898851920:
             channel = self.bot.get_channel(956359584233181295)
             embed = disnake.Embed(title="Welcome to Pomelo SMP!", description="You should go and check out <#955306783130386442> & the <#955306855305990174>!", colour=0xFFE684, timestamp=datetime.utcnow())
