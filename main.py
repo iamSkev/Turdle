@@ -4,7 +4,15 @@ from dotenv import load_dotenv
 import os
 from disnake.ext import commands
 
-bot = commands.Bot(command_prefix="t!", intents=disnake.Intents.all())
+class Turdle(commands.Bot):
+  def __init__(self):
+    intents = disnake.Intents.all()
+    super().__init__(command_prefix="t!", intents=intents)
+
+  async def on_ready(self) -> None:
+    print(f'Logged in as {self.user} (ID: {self.user.id})')
+
+bot = Turdle()
 
 load_dotenv()
 token = os.getenv("BOT_TOKEN")
